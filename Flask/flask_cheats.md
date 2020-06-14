@@ -1,4 +1,4 @@
-### Welcome to Flask Cheats 
+### Welcome to Flask Cheats
 ```Python
 # !pip install Flask
 from flask import (
@@ -38,3 +38,4 @@ if __name__=='__main__':
 * request.cookies.get('username')
 * request.get_json()
 
+#### Lets create a simple API using flask
