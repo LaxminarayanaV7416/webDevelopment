@@ -39,3 +39,14 @@ if __name__=='__main__':
 * request.get_json()
 
 #### Lets create a simple API using flask
+```Python
+from flask import Flask, request,jsonify
+
+app = Flask(__name__)
+
+@app.route('/<string:name>',methods = ['GET'])
+def home(name):
+  return jsonify({'name':name})
+
+app.run(debug=True)
+```
