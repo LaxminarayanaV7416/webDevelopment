@@ -22,3 +22,11 @@ api.add_resource(LetsTestREST, '/')
 
 app.run(debug=True)
 ```
+#### As of now we have seen requests without parameters in URL, now lets see how to incorporate them in restful
+```Python
+class TestingParameter(Resource):
+    def get(self,name):
+        return {'input_parameter': name}
+
+api.add_resource(TestingParameter, '/test/<string:name>')
+```
