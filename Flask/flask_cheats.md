@@ -9,7 +9,8 @@ from flask import (
                     request,
                     redirect,
                     abort,
-                    session
+                    session,
+		    make_response
                     )
 
 app = Flask(__name__)
@@ -47,6 +48,23 @@ app = Flask(__name__)
 @app.route('/<string:name>',methods = ['GET'])
 def home(name):
   return jsonify({'name':name})
+
+app.run(debug=True)
+```
+#### Lets see how to set cookies
+* we are going to use make_response which will accept any response we wnt to return and with accept make_response object we can add additional parameters
+
+```Python
+from flask import Flask, make_response, jsonify
+
+
+app = Flask(__name__)
+
+@app.route('/',methods=['GET'])
+def test():
+    resp = make_response(jsonify({'am setting cookies':'yaah True'}))
+    resp.set_cookie('test cookie','am setting True')
+    return resp
 
 app.run(debug=True)
 ```
