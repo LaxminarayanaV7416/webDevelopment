@@ -65,6 +65,11 @@ def test():
     resp = make_response(jsonify({'am setting cookies':'yaah True'}))
     resp.set_cookie('test cookie','am setting True')
     return resp
-
+ 
+@app.route('/get',methods=['GET'])
+def get_cookie():
+	cookie = request.cookies.get('cokkie_name')
+	return {'cookie_we_got':cookie}
+	
 app.run(debug=True)
 ```
